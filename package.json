@@ -1,7 +1,19 @@
 {
-  "name": "cotd",
-  "version": "0.0.1",
+  "name": "catch-of-the-day",
+  "version": "1.0.0",
+  "description": "A real-time app for a seafood market with a menu, an order form, and an inventory management area where authorized users can immediately update product details",
+  "main": "index.js",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheafitzek/catch-of-the-day.git"
+  },
+  "author": "Shea Fitzek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheafitzek/catch-of-the-day/issues"
+  },
+  "homepage": "https://github.com/sheafitzek/catch-of-the-day",
   "devDependencies": {
     "autoprefixer-stylus": "0.10.0",
     "babel-eslint": "^7.1.1",
@@ -22,6 +34,8 @@
     "react-router": "4.0.0-alpha.4"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d src",
     "start": "react-scripts start",
     "watch": "concurrently --names \"webpack, stylus\" --prefix name \"npm run start\" \"npm run styles:watch\"",
     "build": "react-scripts build",
