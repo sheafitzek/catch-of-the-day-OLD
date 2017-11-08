@@ -1,5 +1,7 @@
 import React from 'react';
 
+import base from '../base';
+
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
@@ -22,6 +24,16 @@ class App extends React.Component {
 		}
 	}
 
+	componentWillMount() {
+		this.ref = base.syncState(`${this.props.params.storeId}/fishes`, {
+			context : this,
+			state   : 'fishes',
+		});
+	}
+
+	componentWillUnmount() {
+		base.removeBinding(this.ref);
+	}
 	addFish(fish) {
 		const fishes = {...this.state.fishes};
 		const timestamp = Date.now();
