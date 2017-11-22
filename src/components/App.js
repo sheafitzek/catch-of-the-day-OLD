@@ -19,7 +19,9 @@ class App extends React.Component {
 		this.removeFish = this.removeFish.bind(this);
 		this.loadSamples = this.loadSamples.bind(this);
 		this.addToOrder = this.addToOrder.bind(this);
-		this.removeFromOrder = this.removeFromOrder.bind(this);
+		this.removeFromOrder = this.removeFromOrder.bind(
+			this
+		);
 		// initial state
 		this.state = {
 			fishes : {},
@@ -28,10 +30,13 @@ class App extends React.Component {
 	}
 
 	componentWillMount() {
-		this.ref = base.syncState(`${this.props.params.storeId}/fishes`, {
-			context : this,
-			state   : `fishes`,
-		});
+		this.ref = base.syncState(
+			`${this.props.params.storeId}/fishes`,
+			{
+				context : this,
+				state   : `fishes`,
+			}
+		);
 
 		const localStorageRef = localStorage.getItem(
 			`order-${this.props.params.storeId}`
@@ -110,11 +115,15 @@ class App extends React.Component {
 				<div className="menu">
 					<Header tagline="Fresh Seafood Market" />
 					<ul className="list-of-fishes">
-						{Object.keys(this.state.fishes).map((key) => (
+						{Object.keys(
+							this.state.fishes
+						).map((key) => (
 							<Fish
 								key={key}
 								index={key}
-								details={this.state.fishes[key]}
+								details={
+									this.state.fishes[key]
+								}
 								addToOrder={this.addToOrder}
 							/>
 						))}

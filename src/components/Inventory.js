@@ -5,7 +5,9 @@ class Inventory extends React.PureComponent {
 	constructor() {
 		super();
 
-		this.renderInventory = this.renderInventory.bind(this);
+		this.renderInventory = this.renderInventory.bind(
+			this
+		);
 		this.handleChange = this.handleChange.bind(this);
 	}
 
@@ -29,7 +31,8 @@ class Inventory extends React.PureComponent {
 					name="name"
 					value={fish.name}
 					placeholder="Fish Name"
-					onChange={(e) => this.handleChange(e, key)}
+					onChange={(e) =>
+						this.handleChange(e, key)}
 				/>
 
 				<input
@@ -37,7 +40,8 @@ class Inventory extends React.PureComponent {
 					name="price"
 					value={fish.price}
 					placeholder="Fish Price"
-					onChange={(e) => this.handleChange(e, key)}
+					onChange={(e) =>
+						this.handleChange(e, key)}
 				/>
 
 				<select
@@ -45,10 +49,15 @@ class Inventory extends React.PureComponent {
 					name="status"
 					value={fish.status}
 					placeholder="Fish Status"
-					onChange={(e) => this.handleChange(e, key)}
+					onChange={(e) =>
+						this.handleChange(e, key)}
 				>
-					<option value="available">Fresh!</option>
-					<option value="unavailable">Sold Out!</option>
+					<option value="available">
+						Fresh!
+					</option>
+					<option value="unavailable">
+						Sold Out!
+					</option>
 				</select>
 
 				<textarea
@@ -56,7 +65,8 @@ class Inventory extends React.PureComponent {
 					name="desc"
 					value={fish.desc}
 					placeholder="Fish Desc"
-					onChange={(e) => this.handleChange(e, key)}
+					onChange={(e) =>
+						this.handleChange(e, key)}
 				/>
 
 				<input
@@ -64,10 +74,14 @@ class Inventory extends React.PureComponent {
 					name="image"
 					value={fish.image}
 					placeholder="Fish Image"
-					onChange={(e) => this.handleChange(e, key)}
+					onChange={(e) =>
+						this.handleChange(e, key)}
 				/>
 
-				<button onClick={() => this.props.removeFish(key)}>
+				<button
+					onClick={() =>
+						this.props.removeFish(key)}
+				>
 					Remove Fish
 				</button>
 			</div>
@@ -78,7 +92,9 @@ class Inventory extends React.PureComponent {
 		return (
 			<div>
 				<h2>Inventory</h2>
-				{Object.keys(this.props.fishes).map(this.renderInventory)}
+				{Object.keys(this.props.fishes).map(
+					this.renderInventory
+				)}
 				<AddFishForm addFish={this.props.addFish} />
 				<button onClick={this.props.loadSamples}>
 					Add Sample Fish
