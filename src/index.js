@@ -2,6 +2,8 @@ import React from 'react'; // importing a string (that is not a path) tells reac
 import {render} from 'react-dom'; // an export inclosed in {} is a single export
 import {BrowserRouter, Match, Miss} from 'react-router';
 
+import registerServiceWorker from './registerServiceWorker';
+
 import './css/style.css'; // importing a path tells react to follow the file structure to find the import
 import App from './components/App'; // an export without {} is a default export
 
@@ -28,3 +30,5 @@ const Root = () => {
 };
 
 render(<Root />, document.querySelector(`#main`));
+
+registerServiceWorker();

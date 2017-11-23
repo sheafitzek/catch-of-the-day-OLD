@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import {formatPrice} from '../helpers';
 
 class Fish extends React.PureComponent {
@@ -14,10 +16,7 @@ class Fish extends React.PureComponent {
 			<li className="menu-fish">
 				{` `}
 				{/* 🐟 */}
-				<img
-					src={details.image}
-					alt={details.name}
-				/>
+				<img src={details.image} alt={details.name} />
 				<h3 className="fish-name">
 					{details.name}
 					<span className="price">
@@ -26,8 +25,7 @@ class Fish extends React.PureComponent {
 				</h3>
 				<p>{details.desc}</p>
 				<button
-					onClick={() =>
-						this.props.addToOrder(index)}
+					onClick={() => this.props.addToOrder(index)}
 					disabled={!isAvailable}
 				>
 					{buttonText}
@@ -38,9 +36,9 @@ class Fish extends React.PureComponent {
 }
 
 Fish.propTypes = {
-	details    : React.PropTypes.object.isRequired,
-	index      : React.PropTypes.string.isRequired,
-	addToOrder : React.PropTypes.func.isRequired,
+	details    : PropTypes.object.isRequired,
+	index      : PropTypes.string.isRequired,
+	addToOrder : PropTypes.func.isRequired,
 };
 
 export default Fish;

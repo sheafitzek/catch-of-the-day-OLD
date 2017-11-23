@@ -1,4 +1,7 @@
 import React from 'react';
+
+import PropTypes from 'prop-types';
+
 import {getFunName} from '../helpers';
 
 class StorePicker extends React.Component {
@@ -13,9 +16,7 @@ class StorePicker extends React.Component {
 
 		const storeId = this.storeInput.value;
 
-		this.context.router.transitionTo(
-			`/store/${storeId}`
-		);
+		this.context.router.transitionTo(`/store/${storeId}`);
 	}
 
 	render() {
@@ -35,9 +36,7 @@ class StorePicker extends React.Component {
 					}}
 					required
 				/>
-				<button type="submit">
-					Visit Store 🡒
-				</button>
+				<button type="submit">Visit Store 🡒</button>
 			</form>
 		);
 	}
@@ -45,7 +44,7 @@ class StorePicker extends React.Component {
 
 // access BrowserRouter from index.js
 StorePicker.contextTypes = {
-	router : React.PropTypes.object,
+	router : PropTypes.object,
 };
 
 export default StorePicker;

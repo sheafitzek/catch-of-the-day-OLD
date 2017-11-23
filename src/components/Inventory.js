@@ -1,6 +1,10 @@
 import React from 'react';
-import AddFishForm from './AddFishForm';
+
+import PropTypes from 'prop-types';
+
 import base from '../base';
+
+import AddFishForm from './AddFishForm';
 
 class Inventory extends React.PureComponent {
 	constructor() {
@@ -204,12 +208,12 @@ class Inventory extends React.PureComponent {
 }
 
 Inventory.propTypes = {
-	addFish     : React.PropTypes.func.isRequired,
-	updateFish  : React.PropTypes.func.isRequired,
-	removeFish  : React.PropTypes.func.isRequired,
-	loadSamples : React.PropTypes.func.isRequired,
-	fishes      : React.PropTypes.object.isRequired,
-	storeId     : React.PropTypes.string.isRequired,
+	addFish     : PropTypes.func.isRequired,
+	updateFish  : PropTypes.func.isRequired,
+	removeFish  : PropTypes.func.isRequired,
+	loadSamples : PropTypes.func.isRequired,
+	fishes      : PropTypes.object.isRequired,
+	storeId     : PropTypes.string.isRequired,
 };
 
 export default Inventory;
