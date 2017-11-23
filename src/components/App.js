@@ -19,9 +19,7 @@ class App extends React.Component {
 		this.removeFish = this.removeFish.bind(this);
 		this.loadSamples = this.loadSamples.bind(this);
 		this.addToOrder = this.addToOrder.bind(this);
-		this.removeFromOrder = this.removeFromOrder.bind(
-			this
-		);
+		this.removeFromOrder = this.removeFromOrder.bind(this);
 		// initial state
 		this.state = {
 			fishes : {},
@@ -121,9 +119,7 @@ class App extends React.Component {
 							<Fish
 								key={key}
 								index={key}
-								details={
-									this.state.fishes[key]
-								}
+								details={this.state.fishes[key]}
 								addToOrder={this.addToOrder}
 							/>
 						))}
@@ -140,6 +136,7 @@ class App extends React.Component {
 					removeFish={this.removeFish}
 					loadSamples={this.loadSamples}
 					fishes={this.state.fishes}
+					storeId={this.props.params.storeId}
 				/>
 			</div>
 		);
