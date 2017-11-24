@@ -1,0 +1,15 @@
+{
+	"short_name": "Catch of the Day",
+	"name": "Catch of the Day - A Real Time Seafood Market App",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"start_url": "./index.html",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}
