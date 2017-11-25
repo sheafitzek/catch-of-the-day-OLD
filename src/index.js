@@ -5,8 +5,8 @@ import {BrowserRouter, Match, Miss} from 'react-router';
 import registerServiceWorker from './registerServiceWorker';
 
 import './css/style.css'; // importing a path tells react to follow the file structure to find the import
-import App from './components/App'; // an export without {} is a default export
 
+import App from './components/App'; // an export without {} is a default export
 import StorePicker from './components/StorePicker';
 import NotFound from './components/NotFound';
 

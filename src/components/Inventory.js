@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
 
 import base from '../base';
@@ -54,7 +53,6 @@ class Inventory extends React.PureComponent {
 	}
 
 	authHandler(err, authData) {
-		console.log(authData);
 		if (err) {
 			console.error(err);
 
@@ -84,6 +82,7 @@ class Inventory extends React.PureComponent {
 			<nav className="login">
 				<h2>Inventory</h2>
 				<p>Sign in to Manage your Store's Inventory</p>
+				<button
 					className="github"
 					onClick={() => this.authenticate(`github`)}
 				>
