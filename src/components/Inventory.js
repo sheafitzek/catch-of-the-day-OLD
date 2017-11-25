@@ -57,6 +57,7 @@ class Inventory extends React.PureComponent {
 		console.log(authData);
 		if (err) {
 			console.error(err);
+
 			return;
 		}
 
@@ -82,8 +83,7 @@ class Inventory extends React.PureComponent {
 		return (
 			<nav className="login">
 				<h2>Inventory</h2>
-				<p>Sign in to Manage your Store\'s Inventory</p>
-				<button
+				<p>Sign in to Manage your Store's Inventory</p>
 					className="github"
 					onClick={() => this.authenticate(`github`)}
 				>

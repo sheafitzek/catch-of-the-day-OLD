@@ -10,11 +10,13 @@ import App from './components/App'; // an export without {} is a default export
 import StorePicker from './components/StorePicker';
 import NotFound from './components/NotFound';
 
-const ghRepo = `/${window.location.pathname.split(`/`)[1]}`;
+const basename = window.location.origin.includes(`github.io`)
+	? `/${window.location.pathname.split(`/`)[1]}`
+	: ``;
 
 const Root = () => {
 	return (
-		<BrowserRouter basename={ghRepo}>
+		<BrowserRouter basename={basename}>
 			<div>
 				<Match
 					exactly

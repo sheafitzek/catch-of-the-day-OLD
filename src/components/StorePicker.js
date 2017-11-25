@@ -2,9 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import {getFunName} from '../helpers';
-
-class StorePicker extends React.Component {
+class StorePicker extends React.PureComponent {
 	// Use constructor for multiple use elements, use inline binding for single use elements
 	// constructor() {
 	// 	super();
@@ -30,7 +28,6 @@ class StorePicker extends React.Component {
 				<input
 					type="text"
 					placeholder="Store Name"
-					defaultValue={getFunName()}
 					ref={(input) => {
 						this.storeInput = input;
 					}}
