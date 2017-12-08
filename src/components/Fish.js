@@ -13,8 +13,6 @@ class Fish extends React.PureComponent {
 
 		return (
 			<li className="menu-fish">
-				{` `}
-				{/* 🐟 */}
 				<img src={details.image} alt={details.name} />
 				<h3 className="fish-name">
 					{details.name}

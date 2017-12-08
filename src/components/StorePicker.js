@@ -2,12 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class StorePicker extends React.PureComponent {
-	// Use constructor for multiple use elements, use inline binding for single use elements
-	// constructor() {
-	// 	super();
-	// 	this.goToStore = this.goToStore.bind(this);
-	// }
-
 	goToStore(e) {
 		e.preventDefault();
 
@@ -22,7 +16,6 @@ class StorePicker extends React.PureComponent {
 				className="store-selector"
 				onSubmit={(e) => this.goToStore(e)}
 			>
-				{/* inline binding above */}
 				<h2>Please Enter A Store</h2>
 				<input
 					type="text"
@@ -38,7 +31,6 @@ class StorePicker extends React.PureComponent {
 	}
 }
 
-// access BrowserRouter from index.js
 StorePicker.contextTypes = {
 	router : PropTypes.object,
 };
