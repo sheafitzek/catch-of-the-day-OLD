@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 
-import {formatPrice} from '../helpers';
+import { formatPrice } from '../helpers';
 
 class Order extends React.Component {
 	constructor() {
@@ -15,18 +15,13 @@ class Order extends React.Component {
 		const fish = this.props.fishes[key];
 		const count = this.props.order[key];
 		const removeButton = (
-			<button
-				onClick={() => this.props.removeFromOrder(key)}
-			>
-				&times;
-			</button>
+			<button onClick={() => this.props.removeFromOrder(key)}>&times;</button>
 		);
 
 		if (!fish || fish.status === `unavailable`) {
 			return (
 				<li key={key}>
-					Sorry, {fish ? fish.name : `fish`} is no
-					longer available!
+					Sorry, {fish ? fish.name : `fish`} is no longer available!
 					{removeButton}
 				</li>
 			);
@@ -42,17 +37,11 @@ class Order extends React.Component {
 						transitionEnterTimeout={250}
 						transitionLeaveTimeout={250}
 					>
-						<span key={count}>
-							{count
-								.toString()
-								.padStart(3, `\u00a0`)}
-						</span>
+						<span key={count}>{count.toString().padStart(3, `\u00a0`)}</span>
 					</CSSTransitionGroup>
 					&nbsp; lbs. {fish.name} {removeButton}
 				</span>
-				<span className="price">
-					{formatPrice(count * fish.price)}
-				</span>
+				<span className="price">{formatPrice(count * fish.price)}</span>
 			</li>
 		);
 	}
@@ -62,12 +51,9 @@ class Order extends React.Component {
 		const total = orderIds.reduce((prevTotal, key) => {
 			const fish = this.props.fishes[key];
 			const count = this.props.order[key];
-			const isAvailable =
-				fish && fish.status === `available`;
+			const isAvailable = fish && fish.status === `available`;
 
-			return isAvailable
-				? prevTotal + (count * fish.price || 0)
-				: prevTotal;
+			return isAvailable ? prevTotal + (count * fish.price || 0) : prevTotal;
 		}, 0);
 
 		return (
@@ -92,9 +78,9 @@ class Order extends React.Component {
 }
 
 Order.propTypes = {
-	fishes          : PropTypes.object.isRequired,
-	order           : PropTypes.object.isRequired,
-	removeFromOrder : PropTypes.func.isRequired,
+	fishes: PropTypes.object.isRequired,
+	order: PropTypes.object.isRequired,
+	removeFromOrder: PropTypes.func.isRequired,
 };
 
 export default Order;

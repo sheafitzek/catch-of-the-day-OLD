@@ -12,10 +12,7 @@ class StorePicker extends React.PureComponent {
 
 	render() {
 		return (
-			<form
-				className="store-selector"
-				onSubmit={(e) => this.goToStore(e)}
-			>
+			<form className="store-selector" onSubmit={(e) => this.goToStore(e)}>
 				<h2>Please Enter A Store</h2>
 				<input
 					type="text"
@@ -32,7 +29,7 @@ class StorePicker extends React.PureComponent {
 }
 
 StorePicker.contextTypes = {
-	router : PropTypes.object,
+	router: PropTypes.object,
 };
 
 export default StorePicker;
